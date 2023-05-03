@@ -11,5 +11,7 @@ router.register(r'posts', PostViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('posts/<int:pk>/video/', PostViewSet.as_view({'get': 'get_video'}), name='post-video'),
+    path('posts/<int:pk>/image/', PostViewSet.as_view({'get': 'get_image'}), name='post-image'),
 ]
 

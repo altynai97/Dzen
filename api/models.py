@@ -18,6 +18,8 @@ class Post(models.Model):
     body = models.TextField(blank=True, default='')
     owner = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    video = models.FileField(upload_to='videos/', blank=True)
+    image = models.ImageField(upload_to='images/', blank=True)
 
 
 class Comment(models.Model):

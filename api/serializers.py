@@ -10,6 +10,9 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
+    video_url = serializers.HyperlinkedIdentityField(view_name='post-video', format='html')
+    image_url = serializers.HyperlinkedIdentityField(view_name='post-image', format='html')
+
     class Meta:
         model = Post
         fields = '__all__'
